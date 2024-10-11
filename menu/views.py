@@ -8,8 +8,7 @@ class IndexView(TemplateView):
 
 
 def draw_menu(request, menu_name):
-    menu_item = get_object_or_404(MenuItem, name=menu_name)
     context = {
-        'menu_item': menu_item,
+        'menu_name': menu_name,
     }
     return render(request, 'menu/menu.html', context)
